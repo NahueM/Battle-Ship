@@ -1,12 +1,12 @@
 import React from 'react';
-//import PlayerBoard from (./components/PlayerBoard)
-//import CpuBoard from (./components/CpuBoard)
+import PlayerBoard from './PlayerBoard';
+import CpuBoard from './CpuBoard';
 
 const GameScreen = () => (
   <div>
-    GameScreen page content
-    {/*<PlayerBoard />*/}
-    {/*<CpuBoard />*/}
+   <h1> GameScreen page content</h1>
+    <PlayerBoard />
+    <CpuBoard />
   </div>
 );
 

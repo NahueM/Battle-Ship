@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import AppRouter, { history } from './routers/AppRouter';
 import configureStore from './store/configureStore';
-import { newBoard } from './actions/board';
+import { newHumanBoard, newCpuBoard } from './actions/board';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 
@@ -33,7 +33,8 @@ let setBoard = () => {
 
 let board = setBoard();
 
-store.dispatch(newBoard(board))
+store.dispatch(newHumanBoard(board))
+
 
 
 ReactDOM.render(jsx, document.getElementById('app'));

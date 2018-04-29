@@ -1,12 +1,12 @@
 import React from 'react';
 import Board from './Board';
-import { connect } from 'react-redux';
 
-const PlayerBoard = (props) =>(
+const PlayerBoard = (location) =>(
  
     <Board 
         player= "Human"
-    /> 
+        location= {location}
+    />
 )
 
 export default PlayerBoard;
