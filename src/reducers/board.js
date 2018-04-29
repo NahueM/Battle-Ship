@@ -1,26 +1,29 @@
 //BOARD REDUCER
 
-let board = [];
 
-let setBoard = () =>{
-    for (let i=0; i<= 10; i++){
-        for(let j=0; j<=10; j++){
-            board.push(`${i},${j},0`);
-        }
-    }
-    return board;
-}
+const boardDefaultState = {};
 
-
-const boardDefaultState = setBoard()
 
 export default (state = boardDefaultState, action) => {
-    switch (action.type){
+    switch (action.type) {
         case 'NEW_BOARD':
             return [
-                state
+                ...state,
+                ...action.board
             ];
+        case 'DRAW_SHIP':
+            return state.map(e => {
+                if (e.id == action.id) {
+                    return {
+                        ...e,
+                        id: action.id,
+                        code: action.code
+                    }
+                } else {
+                    return e
+                }
+            })
         default:
-            return state;    
+            return state;
     }
 }

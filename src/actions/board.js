@@ -1,18 +1,20 @@
 //ADD BOARD
-export const newBoard = () => ({
-    type: 'NEW_BOARD'
+export const newBoard = board => ({
+    type: 'NEW_BOARD',
+    board
 });
+
+//DRAW SHIP
+export const drawShip = (id, code) => ({
+    type: 'DRAW_SHIP',
+    id,
+    code
+})
 
 //CHANGE SECTOR
 export const changeSector = (id, code) => ({
-    type: 'EDIT_SECTOR',
+    type: 'HIT_BOARD_ITEM',
     id,
     code
 });
 
-//DRAW SHIP
-export const drawShip = (id, size) => ({
-    type: 'DRAW_SHIP',
-    id,
-    size
-})
