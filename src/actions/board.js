@@ -4,19 +4,17 @@ export const newHumanBoard = board => ({
     board
 });
 
-export const newCpuBoard = board => ({
-    type: 'NEW_CPU_BOARD',
-    board
+//DRAW SHIP
+export const drawHumanShip = (id, code) => ({
+    type: 'DRAW_HUMAN_SHIP',
+    id,
+    code
 });
 
-//DRAW SHIP
-export const drawHumanShip = (id, code) => (
-    {   
-        type: 'DRAW_HUMAN_SHIP',
-        id,
-        code
-    }
-);
+//INSERT CPU SHIPS
+export const insertCpuShips = () => ({
+    type: 'INSERT_CPU_SHIPS'
+});
 
 //CHANGE SECTOR
 export const changeSector = (id, code) => ({
@@ -25,3 +23,7 @@ export const changeSector = (id, code) => ({
     code
 });
 
+//RERENDER
+export const reRender = () => ({
+    type: 'RE_RENDER'
+})

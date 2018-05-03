@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import AppRouter, { history } from './routers/AppRouter';
 import configureStore from './store/configureStore';
-import { newHumanBoard, newCpuBoard } from './actions/board';
+import { newHumanBoard } from './actions/board';
+import { newCpuBoard } from './actions/cpuBoard';
+import setBoard from './selector/generateBoard';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 
@@ -15,29 +17,14 @@ const jsx = (
   </Provider>
 );
 
+store.dispatch(newHumanBoard(setBoard()));
 
-let setBoard = () => {
-  let aux = [];
+store.dispatch(newCpuBoard(setBoard()));
 
-  for (let i = 0; i <= 10; i++) {
-    for (let j = 0; j <= 10; j++) {
-      let square = {
-        id: `${i},${j}`,
-        code: 0
-      }
-      aux.push(square);
-    }
-  }
-  return aux;
-}
-
-let board = setBoard();
-
-store.dispatch(newHumanBoard(board))
+ReactDOM.render(jsx, document.getElementById('app'))
 
 
 
-ReactDOM.render(jsx, document.getElementById('app'));
 
 
 

@@ -1,8 +1,8 @@
 import React from 'react';
-import Board from './Board';
+import BoardCpu from './BoardCpu';
 
 const CpuBoard = () => (
-    <h1> CPU </h1>
+  <BoardCpu />
 )
 
 export default CpuBoard;

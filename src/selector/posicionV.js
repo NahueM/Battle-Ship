@@ -21,7 +21,6 @@ let posicionV = (id, code, size, cb) => {
             )
         };
     }
-
     cb(pos)
 }
 
