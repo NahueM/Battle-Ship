@@ -23,7 +23,6 @@ const changeColor = (id, board, cb) => {
                 })
             }
         }
-
     }
     cb(pos)
 }

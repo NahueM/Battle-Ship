@@ -13,12 +13,13 @@ import { history } from '../routers/AppRouter';
 class BoardCpu extends React.Component {
 
     state = {
-        cpuPoints: 0
+        cpuPoints: 0,
     }
 
     componentDidMount() {
         this.props.dispatch(setTurn());
     }
+
 
     onSquareClicke(e) {
         if (this.props.game.turn === false) {
@@ -30,17 +31,17 @@ class BoardCpu extends React.Component {
                     this.props.dispatch(setHumanLastHit('Hit!!'))
                 }
 
-                pos[0].code == 4 && this.setState({ cpuPoints: this.state.cpuPoints + 1 });
+                pos[0].code == 4 && this.setState({ cpuPoints: this.state.cpuPoints + 1 })
+
 
                 this.props.dispatch(drawCpuShip(pos[0].id, pos[0].code))
                 this.props.dispatch(setTurn());
                 this.props.dispatch(reRender());
 
-                if (this.state.cpuPoints >= 15) {
+                if (this.state.cpuPoints == 14 && pos[0].code == 4) {
                     this.props.dispatch(setWinner('Human Wins!!'))
                     history.push('/end')
                 }
-
             });
         }
     }

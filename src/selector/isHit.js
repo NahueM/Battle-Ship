@@ -14,7 +14,7 @@ const isHit = (board, cb) => {
                 status = true
             } else if ((board[i].id == id2) && (board[i].code == 2)) {
                 status = true
-            }
+            } 
         }
         prevId2 = id2
         id2 = `${getRandom()},${getRandom()}`

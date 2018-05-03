@@ -55,7 +55,6 @@ class Board extends React.Component {
         }
     }
 
-
     componentDidUpdate() {
         if ((this.props.game.turn === true) && (this.props.location.location !== "/")) {
             isHit(this.props.HumanBoard, (res) => {
@@ -72,8 +71,7 @@ class Board extends React.Component {
                     pos[0].code == 4 && this.setState({ humanPoints: this.state.humanPoints + 1 }) 
 
                     this.props.dispatch(setTurn());
-
-                    if (this.state.humanPoints == 14) {
+                    if (this.state.humanPoints == 14 && pos[0].code == 4) {
                         this.props.dispatch(setWinner('Cpu Wins!!'));
                         history.push('/end');
                     }
